@@ -1,0 +1,143 @@
+/* Navbar Styles */
+/* Add your styles for the navbar here */
+
+/* Task Form Styles */
+.task-form {
+    max-width: 500px;
+    margin: 20px 0 0 200px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f3f7f9;
+   
+
+}
+
+.task-form .form-group {
+    margin-bottom: 20px;
+
+}
+
+.task-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.task-form input,
+.task-form textarea,
+.task-form select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+}
+
+.task-form select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='4' viewBox='0 0 8 4'%3E%3Cpath fill='%23000' fill-opacity='0.54' d='M4 4L0 0h8z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position-x: calc(100% - 10px);
+    background-position-y: 50%;
+}
+
+.task-form .submit-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+   
+}
+
+.task-form .submit-btn:hover {
+    background-color: #45a049;
+}
+.create-project{
+    align-items: center;
+}
+
+/* Create Task Button Styles */
+.create-project-btn{
+    align-items: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #642ca9;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 30px;
+}
+
+.create-project-btn:hover {
+    background-color: #b0c7f2;
+}
+
+/* Tasks Table Styles */
+.tasks-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tasks-table th,
+.tasks-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.tasks-table th {
+    background-color: #642ca9;
+    color: #fff;
+    font-weight: bold;
+}
+
+.tasks-table tr:nth-child(even) {
+    background-color: #bfd7ff;
+}
+
+.tasks-table tr:hover {
+    background-color: #e0e0e0;
+}
+
+
+/* fds */
+/* Add this CSS to your styles.css or component-specific CSS file */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

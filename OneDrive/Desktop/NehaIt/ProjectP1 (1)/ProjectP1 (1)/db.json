@@ -1,0 +1,349 @@
+{
+  "AdminAuth": [
+    {
+      "username": "admin1",
+      "email": "admin1@example.com",
+      "password": "password123",
+      "id": "6b99"
+    },
+    {
+      "username": "admin2",
+      "email": "admin2@example.com",
+      "password": "password456",
+      "id": "bc72"
+    },
+    {
+      "username": "admin3",
+      "email": "admin3@example.com",
+      "password": "password789",
+      "id": "e750"
+    },
+    {
+      "id": "83aa",
+      "username": "Rishabh",
+      "email": "rishabh200rockstar@gmail.com`",
+      "password": "123"
+    },
+    {
+      "id": "58e7",
+      "username": "dsffsd",
+      "email": "gd@gsf",
+      "password": "123"
+    },
+    {
+      "id": "b5c3",
+      "username": "Rishabh",
+      "email": "rishabh200rockstar@gmail.com",
+      "password": "123"
+    }
+  ],
+  "tasks": [
+    {
+      "projectId": 1,
+      "taskId": 101,
+      "taskName": "Task 1",
+      "assignTo": "User A",
+      "assignDate": "2024-05-10",
+      "dueDate": "2024-06-15",
+      "priority": "low",
+      "status": "Open",
+      "id": "6383"
+    },
+    {
+      "projectId": 1,
+      "taskId": 102,
+      "taskName": "Task 1",
+      "assignTo": "User B",
+      "assignDate": "2024-05-05",
+      "dueDate": "2024-06-20",
+      "priority": "Medium",
+      "status": "Open",
+      "id": "7a88"
+    },
+    {
+      "projectId": 2,
+      "taskId": 103,
+      "taskName": "Task 1",
+      "assignTo": "User C",
+      "assignDate": "2024-05-21",
+      "dueDate": "2024-06-15",
+      "priority": "High",
+      "status": "Open",
+      "id": "b447"
+    },
+    {
+      "projectId": 3,
+      "taskId": 100,
+      "taskName": "Task 1",
+      "assignTo": "User D",
+      "assignDate": "2024-04-05",
+      "dueDate": "2024-06-20",
+      "priority": "Medium",
+      "status": "Open",
+      "id": "f45b"
+    },
+    {
+      "id": "00d9",
+      "projectId": 0,
+      "taskId": 0,
+      "taskName": "",
+      "assignTo": "",
+      "assignDate": "2024-05-21T07:02:28.795Z",
+      "dueDate": "2024-05-21T07:02:28.795Z",
+      "priority": "Low",
+      "status": "Open"
+    },
+    {
+      "id": "ad68",
+      "projectId": 10,
+      "taskId": 0,
+      "taskName": "Rishab",
+      "assignTo": "Sonu",
+      "assignDate": "2010-09-02",
+      "dueDate": "2919-10-03",
+      "priority": "Low",
+      "status": "Open"
+    },
+    {
+      "id": "fe9b",
+      "projectId": 11,
+      "taskId": 0,
+      "taskName": "Dancing",
+      "assignTo": "Praveena",
+      "assignDate": "2024-05-29",
+      "dueDate": "2024-05-27",
+      "priority": "High",
+      "status": "Open"
+    },
+    {
+      "id": "7c74",
+      "projectId": 56,
+      "taskId": 0,
+      "taskName": "FrontEnd",
+      "assignTo": "Rishabh",
+      "assignDate": "2010-10-10",
+      "dueDate": "1321-12-31",
+      "priority": "High",
+      "status": "Open"
+    },
+    {
+      "id": "4aae",
+      "projectId": 1231,
+      "taskId": 18488,
+      "taskName": "BackEnd",
+      "assignTo": "Abdul",
+      "assignDate": "5531-03-04",
+      "dueDate": "3231-03-04",
+      "priority": "High",
+      "status": "Open"
+    }
+  ],
+  "projects": [
+    {
+      "projectId": 1,
+      "projectName": "Project Alpha",
+      "projectDescription": "Description of Project Alpha",
+      "clientName": "Client A",
+      "clientInfo": "Client A Info",
+      "assignDate": "2024-01-01",
+      "dueDate": "2024-01-15",
+      "id": "7662"
+    },
+    {
+      "projectId": 2,
+      "projectName": "Project Beta",
+      "projectDescription": "Description of Project Beta",
+      "clientName": "Client B",
+      "clientInfo": "Client B Info",
+      "assignDate": "2024-02-01",
+      "dueDate": "2024-02-15",
+      "id": "deb7"
+    },
+    {
+      "projectId": 3,
+      "projectName": "Project Gamma",
+      "projectDescription": "Description of Project Gamma",
+      "clientName": "Client C",
+      "clientInfo": "Client C Info",
+      "assignDate": "2024-03-01",
+      "dueDate": "2024-03-15",
+      "id": "3ea1"
+    }
+  ],
+  "projectsP": [
+    {
+      "id": "1",
+      "name": "Project 1",
+      "description": "Description for Project 1",
+      "clientName": "Client A",
+      "dueDate": "2024-05-21T00:00:00.000Z",
+      "assignedDate": "2024-05-01T00:00:00.000Z",
+      "teamMembers": [
+        {
+          "id": 201,
+          "name": "John Doe",
+          "role": "Developer"
+        },
+        {
+          "id": 202,
+          "name": "Jane Smith",
+          "role": "Tester"
+        },
+        {
+          "id": 203,
+          "name": "Alice Johnson",
+          "role": "Database Administrator"
+        },
+        {
+          "id": 204,
+          "name": "Bob Brown",
+          "role": "Backend Developer"
+        },
+        {
+          "id": 205,
+          "name": "Charlie Davis",
+          "role": "Front-End Developer"
+        },
+        {
+          "id": 206,
+          "name": "Rishab",
+          "role": "Analyst"
+        },
+        {
+          "id": 207,
+          "name": "Neha",
+          "role": "Front-End Developer"
+        }
+      ],
+      "tasks": [
+        {
+          "id": 101,
+          "name": "Implement Authentication",
+          "description": "Develop user authentication using JWT and OAuth.",
+          "assignedTo": 201
+        },
+        {
+          "id": 102,
+          "name": "Setup CI/CD Pipeline",
+          "description": "Configure Continuous Integration and Continuous Deployment pipeline using Jenkins.",
+          "assignedTo": 202
+        },
+        {
+          "id": 103,
+          "name": "Database Optimization",
+          "description": "Optimize database queries and indexing for better performance.",
+          "assignedTo": 203
+        },
+        {
+          "id": 104,
+          "name": "API Development",
+          "description": "Develop RESTful APIs for the new mobile app.",
+          "assignedTo": 204
+        },
+        {
+          "id": 105,
+          "name": "Front-End Refactor",
+          "description": "Refactor the front-end codebase to improve maintainability and performance.",
+          "assignedTo": 205
+        },
+        {
+          "id": 108,
+          "name": "Admin Page",
+          "description": "create admin page",
+          "assignedTo": "206"
+        },
+        {
+          "id": 109,
+          "name": "login page",
+          "description": "This is login page ",
+          "assignedTo": "207"
+        },
+        {
+          "id": 110,
+          "name": "Database creation",
+          "description": "Table creatiion",
+          "assignedTo": "203"
+        },
+        {
+          "id": 1,
+          "name": "login page",
+          "description": "create home page",
+          "assignedTo": "204"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Project 2",
+      "description": "Description for Project 2",
+      "clientName": "Client B",
+      "dueDate": "2024-12-31T00:00:00.000Z",
+      "assignedDate": "2024-06-01T00:00:00.000Z",
+      "teamMembers": [
+        {
+          "id": 201,
+          "name": "John Doe",
+          "role": "Developer"
+        },
+        {
+          "id": 202,
+          "name": "Jane Smith",
+          "role": "Tester"
+        },
+        {
+          "id": 203,
+          "name": "Alice Johnson",
+          "role": "Database Administrator"
+        },
+        {
+          "id": 204,
+          "name": "Bob Brown",
+          "role": "Backend Developer"
+        },
+        {
+          "id": 210,
+          "name": "Praveena",
+          "role": "Developer"
+        }
+      ],
+      "tasks": [
+        {
+          "id": 201,
+          "name": "Setup Database",
+          "description": "Configure the database for the project.",
+          "assignedTo": 201
+        },
+        {
+          "id": 202,
+          "name": "Create UI Mockups",
+          "description": "Design the UI mockups for the project.",
+          "assignedTo": 202
+        },
+        {
+          "id": 203,
+          "name": "Integration Testing",
+          "description": "Perform integration testing on all modules.",
+          "assignedTo": 203
+        },
+        {
+          "id": 204,
+          "name": "Backend Optimization",
+          "description": "Optimize backend services for performance.",
+          "assignedTo": 204
+        },
+        {
+          "id": 1,
+          "name": "project Manager",
+          "description": "create project Manager",
+          "assignedTo": "210"
+        },
+        {
+          "id": 1,
+          "name": "Home page",
+          "description": "create home page",
+          "assignedTo": "201"
+        }
+      ]
+    }
+  ]
+}

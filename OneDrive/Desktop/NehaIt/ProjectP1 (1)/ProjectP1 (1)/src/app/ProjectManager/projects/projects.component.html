@@ -1,0 +1,64 @@
+<app-Pmnavbar></app-Pmnavbar>
+<!-- 
+<div class="projects-container">
+    <div *ngIf="projects | async as projects; else noProjects">
+ 
+    <h2>Projects</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Project Name</th>
+          <th>Description</th>
+          <th>Client</th>
+          <th>Actions</th>
+          <th>Add Members</th>
+          
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let project of projects">
+         
+
+          <td (click)="viewProjectDetails(project.id)">{{ project.name }}</td>
+          <td>{{ project.description }}</td>
+          <td>{{ project.clientName }}</td>
+          <td><button (click)="viewTaskAssign(project.id)">Assign Task</button></td>
+          <td><button (click)="redirectTo(project.id)">Add member</button></td>
+          
+        </tr>
+        </tbody>
+        </table>
+        </div>
+        <ng-template #noProjects>
+          <h3>No projects available. Click below to create a new project.</h3>
+          <button (click)="createProject()">Create Project</button>
+        </ng-template>
+       
+    
+
+       
+      
+      -->
+
+      <div class="projects-container">
+        <div *ngIf="projects | async as projects; else noProjects">
+            <h2>Projects</h2><br>
+            <div class="row">
+                <div class="card" *ngFor="let project of projects">
+                    <h4 (click)="viewProjectDetails(project.id)">{{ project.name }}</h4>
+                    <p>{{ project.description }}</p>
+                    <p>Client: {{ project.clientName }}</p>
+                    <div class="actions">
+                        <button (click)="viewTaskAssign(project.id)">Assign Task</button>
+                        <button (click)="redirectTo(project.id)">Add member</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ng-template #noProjects>
+            <h3>No projects available. Click below to create a new project.</h3>
+            <button (click)="createProject()">Create Project</button>
+        </ng-template>
+    </div>
+    

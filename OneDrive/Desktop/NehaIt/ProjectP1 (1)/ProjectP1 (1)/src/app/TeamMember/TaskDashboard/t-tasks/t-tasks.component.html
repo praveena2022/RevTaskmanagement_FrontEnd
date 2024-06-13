@@ -1,0 +1,316 @@
+
+<div *ngIf="project">
+    <h2>Assign Task to {{ project.name }}</h2>
+    
+
+    <button (click)="toggleFormVisibility()">Create Task</button>
+
+  
+   
+
+
+<form *ngIf="showForm" (ngSubmit)="createTask()">
+    <div>
+      <label for="title">Title:</label>
+      <input id="title" [(ngModel)]="newTask.title" name="title" required>
+    </div>
+    
+    <div>
+      <label for="description">Description:</label>
+      <textarea id="description" [(ngModel)]="newTask.description" name="description" required></textarea>
+    </div>
+    
+    <div>
+      <label for="status">Status:</label>
+      <select id="status" [(ngModel)]="newTask.status" name="status" required>
+        <option value="assigned">Assigned</option>
+        <option value="inprogress">In Progress</option>
+        <option value="completed">Completed</option>
+      </select>
+    </div>
+    <div>
+      <label for="priority">Priority:</label>
+      <select id="priority" [(ngModel)]="newTask.priority" name="priority" required>
+        <option value="High">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+      </select>
+      <label for="assignedTo">Assigned To:</label>
+  <select id="assignedTo" [(ngModel)]="selectedMemberId" name="assignedTo" required>
+    <option *ngFor="let member of teamMembers" [value]="member.id">
+      {{member.email}}
+    </option>
+  </select>
+  <button type="submit">Create Task</button>
+
+
+    </div>
+</form>
+<form *ngIf="showEdit" (ngSubmit)="editTask()">
+    <div>
+      <label for="priority">Priority:</label>
+      <select id="priority" [(ngModel)]="newTask.priority" name="priority" required>
+        <option value="High">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+      </select>
+    </div>
+    <div>
+        <label for="Due Date">Due Date:</label>
+    
+      <input type="date" id="dueDate" [(ngModel)]="newTask.dueDate" name="dueDate" required/>
+    
+    </div>
+    <div>
+        <!-- <label for="assignedTo">Assigned To:</label>
+        <select id="assignedTo" [(ngModel)]="newTask.assignedTo" name="assignedTo" required>
+        </select> -->
+    
+    <label for="assignedTo">Assigned To:</label>
+<select id="assignedTo" [(ngModel)]="selectedMemberId" name="assignedTo" required>
+  <option *ngFor="let member of teamMembers" [value]="member.id">
+    {{member.email}}
+  </option>
+</select>
+      </div>
+
+
+      <button type="submit">Submit</button>
+
+
+</form>
+<form *ngIf="showChangeStatus" (ngSubmit)="changeStatus()">
+    <div>
+        <label for="status">Status:</label>
+        <select id="status" [(ngModel)]="newTask.status" name="status" required>
+          <option value="assigned">Assigned</option>
+          <option value="inprogress">In Progress</option>
+          <option value="completed">Completed</option>
+        </select>
+      </div>
+
+      <button type="submit">Submit</button>
+</form>
+  
+ 
+    <h3>Existing Tasks</h3>
+    <table>
+      <thead>
+        <tr>
+         <th>Project Id</th>
+          <th>Task Id</th>
+          <th>Task Name</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th>Priority</th>
+          <th>Assign To</th>
+          <th>Assign Date</th>
+          <th>Due Date</th>
+          <th>Edit Task</th>
+          <th>Change Status</th>
+        
+          
+         
+            
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasks">
+
+        <td>{{task.projectId}}</td>
+        <td>{{task.id}}</td>
+          <td>{{ task.title }}</td>
+          <td>{{ task.description }}</td>
+
+          <td>{{task.status}}</td>
+          <td>{{task.priority}}</td>
+          <td>{{task.assignedTo}}</td>
+          <td>{{task.assignDate}}</td>
+
+          
+          <td>{{task.dueDate}}</td>
+          <td><button (click)="handleTask()">Edit Task</button></td>
+          <td><button (click)="handleStatus()">Change Status</button></td>
+
+
+        </tr>
+      </tbody>
+    </table>
+
+
+ 
+<app-t-navbar></app-t-navbar>
+ <div class="project-details-container" *ngIf="project">
+    <h2>Assign Task to {{ project.name }}</h2>
+  
+    <!-- <button class="action-button" (click)="toggleFormVisibility()">Create Task</button>
+  
+    <form *ngIf="showForm" class="task-form" (ngSubmit)="createTask()">
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input id="title" [(ngModel)]="newTask.title" name="title" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea id="description" [(ngModel)]="newTask.description" name="description" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="status">Status:</label>
+        <select id="status" [(ngModel)]="newTask.status" name="status" required>
+          <option value="assigned">Assigned</option>
+          <option value="inprogress">In Progress</option>
+          <option value="completed">Completed</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="priority">Priority:</label>
+        <select id="priority" [(ngModel)]="newTask.priority" name="priority" required>
+          <option value="High">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="assignedTo">Assigned To:</label>
+        <select id="assignedTo" [(ngModel)]="selectedMemberId" name="assignedTo" required>
+          <option *ngFor="let member of teamMembers" [value]="member.id">{{ member.email }}</option>
+        </select>
+      </div>
+      <button type="submit" class="action-button">Create Task</button>
+    </form> -->
+
+ <!-- Button to open the modal -->
+<!-- <button class="action-button" (click)="toggleFormVisibility()">Create Task</button>
+
+
+<div class="modal" *ngIf="showForm">
+
+  <div class="modal-content">
+    <span class="close" (click)="toggleFormVisibility()">&times;</span>
+    <form (ngSubmit)="createTask()">
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input id="title" [(ngModel)]="newTask.title" name="title" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea id="description" [(ngModel)]="newTask.description" name="description" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="status">Status:</label>
+        <select id="status" [(ngModel)]="newTask.status" name="status" required>
+          <option value="assigned">Assigned</option>
+          <option value="inprogress">In Progress</option>
+          <option value="completed">Completed</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="priority">Priority:</label>
+        <select id="priority" [(ngModel)]="newTask.priority" name="priority" required>
+          <option value="High">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="assignedTo">Assigned To:</label>
+        <select id="assignedTo" [(ngModel)]="selectedMemberId" name="assignedTo" required>
+          <option *ngFor="let member of teamMembers" [value]="member.id">{{ member.email }}</option>
+        </select>
+      </div>
+      <button type="submit" class="action-button">Create Task</button>
+    </form>
+  </div>
+</div>
+
+
+
+  
+    <form *ngIf="showEdit" class="task-form" (ngSubmit)="editTask()">
+      <div class="form-group">
+        <label for="priority">Priority:</label>
+        <select id="priority" [(ngModel)]="newTask.priority" name="priority" required>
+          <option value="High">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="dueDate">Due Date:</label>
+        <input type="date" id="dueDate" [(ngModel)]="newTask.dueDate" name="dueDate" required/>
+      </div>
+      <div class="form-group">
+        <label for="assignedTo">Assigned To:</label>
+        <select id="assignedTo" [(ngModel)]="newTask.assignedTo" name="assignedTo" required></select>
+      </div>
+      <button type="submit" class="action-button">Submit</button>
+    </form> 
+  
+     <form *ngIf="showChangeStatus" class="task-form" (ngSubmit)="changeStatus()">
+      <div class="form-group">
+        <label for="status">Status:</label>
+        <select id="status" [(ngModel)]="newTask.status" name="status" required>
+          <option value="assigned">Assigned</option>
+          <option value="inprogress">In Progress</option>
+          <option value="completed">Completed</option>
+        </select>
+      </div>
+      <button type="submit" class="action-button">Submit</button>
+    </form> -->
+
+
+    <!-- Modal for Changing Task Status -->
+<!-- <div class="modal" *ngIf="showChangeStatus">
+    <div class="modal-content">
+      <span class="close" >&times;</span>
+      <form class="task-form" (ngSubmit)="changeStatus()">
+        <div class="form-group">
+          <label for="status">Status:</label>
+          <select id="status" [(ngModel)]="newTask.status" name="status" required>
+            <option value="assigned">Assigned</option>
+            <option value="inprogress">In Progress</option>
+            <option value="completed">Completed</option>
+          </select>
+        </div>
+        <button type="submit" class="action-button">Submit</button>
+      </form>
+    </div>
+  </div>
+  
+  
+    <h3>Existing Tasks</h3>
+    <table class="tasks-table">
+      <thead>
+        <tr>
+          <th>Project Id</th>
+          <th>Task Id</th>
+          <th>Task Name</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th>Priority</th>
+          <th>Assign To</th>
+          <th>Assign Date</th>
+          <th>Due Date</th>
+          <th>Edit Task</th>
+          <th>Change Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasks">
+          <td>{{ task.projectId }}</td>
+          <td>{{ task.id }}</td>
+          <td>{{ task.title }}</td>
+          <td>{{ task.description }}</td>
+          <td>{{ task.status }}</td>
+          <td>{{ task.priority }}</td>
+          <td>{{ task.assignedTo }}</td>
+          <td>{{ task.assignDate }}</td>
+          <td>{{ task.dueDate }}</td>
+          <td><button class="action-button" (click)="handleTask()">Edit Task</button></td>
+          <td><button class="action-button" (click)="handleStatus()">Change Status</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+   -->

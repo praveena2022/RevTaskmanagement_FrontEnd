@@ -1,0 +1,22 @@
+
+
+
+<h2>Edit Task</h2>
+<div *ngIf="updatedTask">
+  <label>Project ID: <input [(ngModel)]="updatedTask.projectId" type="number" /></label>
+  <label>Task Name: <input [(ngModel)]="updatedTask.title" /></label>
+  <label>Assign To: <input [(ngModel)]="updatedTask.assignedTo" /></label>
+  <label>Assign Date: <input [(ngModel)]="updatedTask.assignDate" type="date" /></label>
+  <label>Due Date: <input [(ngModel)]="updatedTask.dueDate" type="date" /></label>
+  <label>Priority:
+    <select [(ngModel)]="updatedTask.priority">
+      <option value="Low">Low</option>
+      <option value="Medium">Medium</option>
+      <option value="High">High</option>
+    </select>
+  </label>
+  <button (click)="save()">Save</button>
+  <button (click)="cancel()">Cancel</button>
+</div>  
+
+

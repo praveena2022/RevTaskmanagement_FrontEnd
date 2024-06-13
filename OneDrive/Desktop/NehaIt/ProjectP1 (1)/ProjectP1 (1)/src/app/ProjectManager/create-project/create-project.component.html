@@ -1,0 +1,64 @@
+
+
+  
+ <app-Pmnavbar></app-Pmnavbar>
+ <br><br>
+
+<div class="create-project">
+
+  <button class="create-project-btn" (click)="toggleFormVisibility()">Create project</button>
+
+  <!-- The Modal -->
+  <div id="taskModal" class="modal" [ngStyle]="{'display': showForm ? 'block' : 'none'}">
+      <!-- Modal content -->
+      <div class="modal-content">
+          <span class="close" (click)="toggleFormVisibility()">&times;</span>
+          <form class="task-form" (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                  <label for="title">Name:</label>
+                  <input id="title" [(ngModel)]="project.name" name="title" required>
+              </div>
+              <div class="form-group">
+                  <label for="description">Description:</label>
+                  <textarea id="description" [(ngModel)]="project.description" name="description" required></textarea>
+              </div>
+              <!-- <div class="form-group">
+                  <label for="status">Status:</label>
+                  <select id="status" [(ngModel)]="newTask.status" name="status" required>
+                      <option value="assigned">Assigned</option>
+                      <option value="inprogress">In Progress</option>
+                      <option value="completed">Completed</option>
+                  </select>
+              </div> -->
+              <!-- <div class="form-group">
+                  <label for="priority">Priority:</label>
+                  <select id="priority" [(ngModel)]="newTask.priority" name="priority" required>
+                      <option value="High">High</option>
+                      <option value="medium">Medium</option>
+                      <option value="low">Low</option>
+                  </select>
+              </div> -->
+              <div class="form-group">
+                <label for="title">AssignDate:</label>
+                <input type="date" id="date" [(ngModel)]="project.assignedDate" name="title" required>
+            </div>
+            <div class="form-group">
+              <label for="title">DueDate:</label>
+              <input type="date" id="date" [(ngModel)]="project.dueDate" name="title" required>
+          </div>
+
+              <div class="form-group">
+                <label for="clientName">Client:</label>
+    <!-- <select id="clientId" name="clientId" [(ngModel)]="project.clientId" required>
+      <option *ngFor="let client of clients" [value]="client.name">{{ client.name }}</option>
+    </select> -->
+    <select id="clientId" [(ngModel)]="project.clientId" name="clientId" required>
+      <option *ngFor="let client of clients" [value]="client.id">{{ client.name }}</option>
+    </select>
+   
+              </div>
+              <button type="submit" class="submit-btn">Create project</button>
+          </form>
+      </div>
+  </div>
+</div>

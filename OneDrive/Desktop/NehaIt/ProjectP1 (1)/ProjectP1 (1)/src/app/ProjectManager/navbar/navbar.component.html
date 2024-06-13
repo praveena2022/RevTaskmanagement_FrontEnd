@@ -1,0 +1,52 @@
+<!-- <nav class="navbar">
+    <a routerLink="/PMDashboard" class="nav-link">Dashboard</a>
+    <a routerLink="/PmClientInfo" class="nav-link">Client Info</a>
+
+    <a routerLink="/project-manager/task-assign" class="nav-link">Assign Tasks</a>
+    <a routerLink="/PMProjects" class="nav-link">Projects</a>
+    <a routerLink="/createPmProject" class="nav-link">Create Projects</a>
+    <a routerLink="/PMProjectDetailsComponent" class="nav-link">Add Memebers</a>
+    <a routerLink="/" class="nav-link">Logout</a>
+  </nav>
+   -->
+
+  
+   <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><span>Rev</span>Task</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto" id="nav-links">
+                <!-- <li class="nav-item">
+                    <a class="nav-link" routerLink="/tHome"><i class="fas fa-home"></i> Home</a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/PMDashboard"><i class="fas fa-user-shield"></i> 
+                   Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/PmClientInfo"><i class="fas fa-project-diagram"></i>Client Info</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" routerLink="/project-manager/task-assign"><i class="fas fa-project-diagram"></i>Assign Task</a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/PMProjects"><i class="fas fa-project-diagram"></i>Projects</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" routerLink="/PMProjectDetailsComponent"><i class="fas fa-project-diagram"></i>Add Members</a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/projects/createproject"><i class="fas fa-project-diagram"></i>Create Project</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/"><i class="fas fa-project-diagram"></i>Logout</a>
+                </li>
+                <span id="role-specific-links"></span>
+            </ul>
+        </div>
+    </div>
+</nav>
+<router-outlet></router-outlet>

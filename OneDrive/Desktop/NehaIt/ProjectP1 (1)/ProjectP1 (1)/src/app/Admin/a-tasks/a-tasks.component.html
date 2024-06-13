@@ -1,0 +1,14 @@
+<!-- <app-a-home></app-a-home> -->
+<div *ngIf="tasks">
+    <h2>Tasks</h2>
+    <ul>
+      <li *ngFor="let t of tasks">
+        <h3>{{ t.taskId }}</h3>
+        <p>{{ t.taskName }}</p>
+        <p>{{ t.priority }}</p>
+        <p>{{ t.status }}</p>
+        <p>{{ t.dueDate }}</p>
+        
+      </li>
+    </ul>
+  </div>

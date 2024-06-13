@@ -1,0 +1,73 @@
+<app-t-navbar></app-t-navbar>
+<h2 id="dashboard">Dashboard</h2>
+<button class="create-task" (click)="openCreateTaskModal()">+ Create Task</button>
+<!-- <button class="create-task" routerLink="/tCreateTaskModalComponent">+ Create Task</button> -->
+
+<div class="task-grid">
+  <div class="column">
+    <h3 id="open">Open</h3>
+    <div class="task" *ngFor="let task of tasks" [ngClass]="{'hidden': task.status !== 'Open'}">
+      <div class="task-details">
+        <p><strong>Project ID:</strong> {{ task.projectId }}</p>
+        <p><strong>Task ID:</strong> {{ task.id }}</p>
+        <p><strong>Task Name:</strong> {{ task.title }}</p>
+        <p><strong>Assign To:</strong> {{ task.assignedTo }}</p>
+        <p><strong>Assign Date:</strong> {{ task.assignDate| date }}</p>
+        <p><strong>Due Date:</strong> {{ task.dueDate| date }}</p>
+        <p><strong>Priority:</strong> {{ task.priority }}</p>
+        <p><strong>Description:</strong> {{ task.description }}</p>
+        <p><strong>Status:</strong> <span class="status" [ngClass]="task.status">{{ task.status }}</span></p>
+      </div>
+      <div class="task-actions">
+        <button class="edit-task" (click)="openEditTaskModal(task)">Edit</button>
+        <button class="change-status" (click)="openChangeStatusModal(task)">Change Status</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <h3 class="in-progress">In Progress</h3>
+    <div class="task" *ngFor="let task of tasks" [ngClass]="{'hidden': task.status !== 'In Progress'}">
+      <div class="task-details">
+        <p><strong>Project ID:</strong> {{ task.projectId }}</p>
+        <p><strong>Task ID:</strong> {{ task.id }}</p>
+        <p><strong>Task Name:</strong> {{ task.title }}</p>
+        <p><strong>Assign To:</strong> {{ task.assignedTo }}</p>
+        <p><strong>Assign Date:</strong> {{ task.assignDate| date }}</p>
+        <p><strong>Due Date:</strong> {{ task.dueDate| date }}</p>
+        <p><strong>Priority:</strong> {{ task.priority }}</p>
+        <p><strong>Description:</strong> {{ task.description }}</p>
+        <p><strong>Status:</strong> <span class="status" id="inprogress" [ngClass]="task.status">{{ task.status }}</span></p>
+      </div>
+      <div class="task-actions">
+        <button class="edit-task" (click)="openEditTaskModal(task)">Edit</button>
+        <button class="change-status" (click)="openChangeStatusModal(task)">Change Status</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <h3 id="completed">Completed</h3>
+    <div class="task" *ngFor="let task of tasks" [ngClass]="{'hidden': task.status !== 'Completed'}">
+      <div class="task-details">
+        <p><strong>Project ID:</strong> {{ task.projectId }}</p>
+        <p><strong>Task ID:</strong> {{ task.id }}</p>
+        <p><strong>Task Name:</strong> {{ task.title }}</p>
+        <p><strong>Assign To:</strong> {{ task.assignedTo }}</p>
+        <p><strong>Assign Date:</strong> {{ task.assignDate| date }}</p>
+        <p><strong>Due Date:</strong> {{ task.dueDate| date }}</p>
+        <p><strong>Priority:</strong> {{ task.priority }}</p>
+        <p><strong>Description:</strong> {{ task.description }}</p>
+        <p><strong>Status:</strong> <span class="status" [ngClass]="task.status">{{ task.status }}</span></p>
+      </div>
+      <div class="task-actions">
+        <button class="edit-task" (click)="openEditTaskModal(task)">Edit</button>
+        <button class="change-status" (click)="openChangeStatusModal(task)">Change Status</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-edit-task-modal *ngIf="showEditTaskModal" [task]="selectedTask" (close)="closeEditTaskModal($event)"></app-edit-task-modal>
+<app-change-status-modal *ngIf="showChangeStatusModal" [task]="selectedTask" (close)="closeChangeStatusModal($event)"></app-change-status-modal>
+<app-create-task-modal [show]="showCreateTaskModal" (close)="closeCreateTaskModal($event)"></app-create-task-modal>

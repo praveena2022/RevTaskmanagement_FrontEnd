@@ -1,0 +1,42 @@
+/* .navbar {
+    background-color: #333;
+    padding: 20px;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+  }
+  
+  .nav-link:hover {
+    text-decoration:underline;
+  } */
+
+
+
+
+  /* new nav */
+  
+.navbar {
+  background-color: #8186d5; /* Light violet color */
+}
+.navbar-brand span {
+  color: #fff; /* BlueViolet color */
+}
+.nav-link {
+  color: #fff; /* Indigo color */
+  transition: color 0.3s ease;
+}
+.nav-link:hover {
+  color: hsl(271, 72%, 87%); /* BlueViolet color */
+}
+.navbar-toggler {
+  border: none;
+}
+.navbar-toggler-icon {
+  color: #4b0082; /* Indigo color */
+}
+.nav-item .fas {
+  margin-right: 5px;
+}

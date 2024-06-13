@@ -1,0 +1,19 @@
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.content {
+    max-width: 60%;
+}
+.container-logo {
+    max-width: 35%;
+}
+.container-logo img {
+    max-width: 100%;
+    height: auto;
+}
+.high {
+    color:#836FFF;
+}

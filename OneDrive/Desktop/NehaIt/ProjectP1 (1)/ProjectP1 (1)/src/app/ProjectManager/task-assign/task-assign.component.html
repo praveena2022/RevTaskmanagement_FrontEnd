@@ -1,0 +1,88 @@
+
+
+  <app-Pmnavbar></app-Pmnavbar>
+<br><br>
+
+<div *ngIf="project">
+  <h2>Assign Task to {{ project.name }}</h2>
+
+  <button class="create-task-btn" (click)="toggleFormVisibility()">Create Task</button>
+
+  <!-- The Modal -->
+  <div id="taskModal" class="modal" [ngStyle]="{'display': showForm ? 'block' : 'none'}">
+      <!-- Modal content -->
+      <div class="modal-content">
+          <span class="close" (click)="toggleFormVisibility()">&times;</span>
+          <form class="task-form" (ngSubmit)="createTask(project.id)">
+              <div class="form-group">
+                  <label for="title">Title:</label>
+                  <input id="title" [(ngModel)]="newTask.title" name="title" required>
+              </div>
+              <div class="form-group">
+                  <label for="description">Description:</label>
+                  <textarea id="description" [(ngModel)]="newTask.description" name="description" required></textarea>
+              </div>
+              <div class="form-group">
+                  <label for="status">Status:</label>
+                  <select id="status" [(ngModel)]="newTask.status" name="status" required>
+                      <option value="assigned">Assigned</option>
+                      <option value="inprogress">In Progress</option>
+                      <option value="completed">Completed</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="priority">Priority:</label>
+                  <select id="priority" [(ngModel)]="newTask.priority" name="priority" required>
+                      <option value="High">High</option>
+                      <option value="medium">Medium</option>
+                      <option value="low">Low</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                <label for="title">AssignDate:</label>
+                <input type="date" id="date" [(ngModel)]="newTask.assignDate" name="title" required>
+            </div>
+            <div class="form-group">
+              <label for="title">DueDate:</label>
+              <input type="date" id="date" [(ngModel)]="newTask.dueDate" name="title" required>
+          </div>
+
+              <div class="form-group">
+                <label for="assignedTo">Assigned To:</label>
+  <select id="assignedTo" [(ngModel)]="selectedMemberId" name="assignedTo" required>
+    <option *ngFor="let member of teamMembers" [value]="member.id">
+      {{member.email}}
+    </option>
+  </select>
+              </div>
+              <button type="submit" class="submit-btn">Create Task</button>
+          </form>
+      </div>
+  </div>
+
+  <h3>Existing Tasks</h3>
+  <table class="tasks-table">
+      <thead>
+          <tr>
+              <th>Task Name</th>
+              <th>Description</th>
+              <th>Status</th>
+              <th>Priority</th>
+              <th>Assign Date</th>
+              <th>Due Date</th>
+              <th>Assigned To</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let task of tasks">
+              <td>{{ task.title }}</td>
+              <td>{{ task.description }}</td>
+              <td>{{ task.status }}</td>
+              <td>{{ task.priority }}</td>
+              <td>{{ task.assignDate | date }}</td>
+              <td>{{ task.dueDate | date }}</td>
+               <td>{{ task.assignedTo }}</td> 
+          </tr>
+      </tbody>
+  </table>
+</div>

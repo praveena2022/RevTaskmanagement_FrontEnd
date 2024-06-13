@@ -1,0 +1,35 @@
+<!-- <div class="project-details-container" *ngIf="project">
+  <h2>{{ project.name }}</h2>
+  <p>{{ project.description }}</p>
+  <p><strong>Client:</strong> {{ project.clientName }}</p>
+
+  <h3>Team Members</h3>
+
+
+  <select [(ngModel)]="selectedMemberId">
+    <option *ngFor="let member of allMembers" [value]="member.id">{{ member.email }}({{member.role}})</option>
+  </select>
+  <button (click)="addMemberToProject(project.id, selectedMemberId)">Add Member</button>
+
+  </div> -->
+<app-Pmnavbar></app-Pmnavbar>
+  <div class="project-details-container" *ngIf="project">
+    <h2>{{ project.name }}</h2>
+    <p>{{ project.description }}</p>
+    <p><strong>Client:</strong> {{ project.clientName }}</p>
+  
+    <h3>Team Members</h3>
+  
+    <div class="form-container">
+      <label for="teamMember">Add Team Member</label>
+      <div class="input-group">
+        <select id="teamMember" [(ngModel)]="selectedMemberId" class="form-control">
+          <option *ngFor="let member of allMembers" [value]="member.id">
+            {{ member.email }} ({{ member.role }})
+          </option>
+        </select>
+        <button (click)="addMemberToProject(project.id, selectedMemberId)" class="btn btn-primary">Add Member</button>
+      </div>
+    </div>
+  </div>
+  

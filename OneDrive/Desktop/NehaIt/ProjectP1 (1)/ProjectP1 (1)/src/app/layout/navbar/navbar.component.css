@@ -1,0 +1,42 @@
+/* span{
+    color: #836FFF;
+    font-size: 26px;
+    font-weight: 400;
+}
+nav-item{
+    gap: 4rem;
+}
+a{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+a:hover{
+    color: 836FFF;
+} */
+
+
+.navbar {
+    background-color: #8186d5; /* Light violet color */
+}
+.navbar-brand span {
+    color: #fff; /* BlueViolet color */
+}
+.nav-link {
+    color: #fff; /* Indigo color */
+    transition: color 0.3s ease;
+}
+.nav-link:hover {
+    color: hsl(271, 72%, 87%); /* BlueViolet color */
+}
+.navbar-toggler {
+    border: none;
+}
+.navbar-toggler-icon {
+    color: #4b0082; /* Indigo color */
+}
+.nav-item .fas {
+    margin-right: 5px;
+}
+
+

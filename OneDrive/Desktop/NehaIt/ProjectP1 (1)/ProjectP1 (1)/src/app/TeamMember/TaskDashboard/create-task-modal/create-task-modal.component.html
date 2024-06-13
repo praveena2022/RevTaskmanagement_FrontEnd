@@ -1,0 +1,92 @@
+
+
+<!-- working below -->
+<!-- <form (ngSubmit)="save()">
+  <label>
+    Project ID:
+    <input [(ngModel)]="newTask.projectId" name="projectId" type="number" required>
+  </label>
+  <label>
+    Task Id:
+    <input [(ngModel)]="newTask.id" name="id" type="number" required>
+  </label>
+  <label>
+    Task Name:
+    <input [(ngModel)]="newTask.title" name="title" required>
+  </label>
+  <label>
+    Assign To:
+    <input [(ngModel)]="newTask.assignedTo" name="assignedTo" required>
+  </label>
+  <label>
+    Assign Date:
+    <input [(ngModel)]="newTask.assignDate" name="assignDate" type="date" required>
+  </label>
+  <label>
+    Due Date:
+    <input [(ngModel)]="newTask.dueDate" name="dueDate" type="date" required>
+  </label>
+  <label>
+    Priority:
+    <select [(ngModel)]="newTask.priority" name="priority" required>
+      <option value="Low">Low</option>
+      <option value="Medium">Medium</option>
+      <option value="High">High</option>
+    </select>
+  </label>
+  <label>
+    Description:
+    <textarea [(ngModel)]="newTask.description" name="description" required></textarea>
+  </label>
+  <button type="submit">Save</button>
+  <button type="button" (click)="cancel()">Cancel</button>
+</form> -->
+
+
+
+ <div class="modal" [ngClass]="{'show': show}">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <form (ngSubmit)="save()">
+      <label>
+        Project ID:
+        <input [(ngModel)]="newTask.projectId" name="projectId" type="number" required>
+      </label>
+      <label>
+        Task Id:
+        <input [(ngModel)]="newTask.id" name="id" type="number" required>
+      </label>
+      <label>
+        Task Name:
+        <input [(ngModel)]="newTask.title" name="title" required>
+      </label>
+      <label>
+        Assign To:
+        <input [(ngModel)]="newTask.assignedTo" name="assignedTo" required>
+      </label>
+      <label>
+        Assign Date:
+        <input [(ngModel)]="newTask.assignDate" name="assignDate" type="date" required>
+      </label>
+      <label>
+        Due Date:
+        <input [(ngModel)]="newTask.dueDate" name="dueDate" type="date" required>
+      </label>
+      <label>
+        Priority:
+        <select [(ngModel)]="newTask.priority" name="priority" required>
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+      </label>
+      <label>
+        Description:
+        <textarea [(ngModel)]="newTask.description" name="description" required></textarea>
+      </label>
+      <button type="submit">Save</button>
+      <button type="button" (click)="cancel()">Cancel</button>
+    </form>
+  </div>
+</div>
+

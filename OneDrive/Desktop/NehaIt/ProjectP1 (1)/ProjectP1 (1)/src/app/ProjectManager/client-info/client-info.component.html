@@ -1,0 +1,34 @@
+<app-Pmnavbar></app-Pmnavbar>
+<!-- <div class="client-info-container">
+    <h2>Client Information</h2>
+    <table>
+      <tr>
+        <th>Name</th>
+
+        <th>Email</th>
+        <th>View Projects</th>
+     
+      </tr>
+      <tr *ngFor="let client of clients">
+        <td>{{client.name}}</td>
+
+        <td>{{client.email}}</td>
+        <td><button (click)="getProjectsByClientId(client.id)">View Projects</button></td>
+       
+      </tr>
+    </table>
+  </div>
+   -->
+
+   <div class="client-info-container">
+    
+    <div class="row">
+        <div class="card" *ngFor="let client of clients">
+            <h4>{{client.name}}</h4>
+            <p>{{client.email}}</p>
+           
+        </div>
+    </div>
+</div>
+
+   
