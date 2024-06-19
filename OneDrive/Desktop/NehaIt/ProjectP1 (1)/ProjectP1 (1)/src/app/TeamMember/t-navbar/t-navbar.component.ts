@@ -22,7 +22,7 @@ export class TNavbarComponent implements OnInit{
 
   logout(): void {
     // Implement logout logic here (e.g., clearing tokens, redirecting to login)
-    this.router.navigate(['/home']);
+    this.router.navigate(['/']);
   }
 
   redirect(): void {

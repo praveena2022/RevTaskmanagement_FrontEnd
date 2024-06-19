@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 // import { project } from './admin-auth';
 import { Observable } from 'rxjs';
 import { Project } from './project';
+import { ProjectP } from './projectp';
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +33,17 @@ export class ProjectService {
   getProjects(): Observable<Project[]> {
     return this.http.get<Project[]>(`${this.apiURL}`);
   }
+
+  getProjectsByTM(userId:string):Observable<Project[]> {
+    return this.http.get<Project[]>(`${this.apiURL}/TM/${userId}`);
+  }
+  // getProjectsByPM(pmiD:string): Observable<ProjectP[]> {
+  //   return this.http.get<ProjectP[]>(`${this.apiURL}/PM/${pmiD}`).pipe(
+  //     tap(projects => console.log('Fetched projects:', projects))
+  //   );
+  // }
+
+  
 
   getProjectById(id: number): Observable<Project | undefined> {
     

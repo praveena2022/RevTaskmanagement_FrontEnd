@@ -1,7 +1,7 @@
-<!-- 
+
 <app-t-navbar></app-t-navbar>
 <div>
-  <h2>Projects</h2>
+   <h2>Projects</h2>
   <table>
     <thead>
       <tr>
@@ -28,32 +28,10 @@
       </tr>
     </tbody>
   </table>
-</div> -->
+</div> 
 
-<app-t-navbar></app-t-navbar>
 
-<div class="project-table">
-  <h2>Projects</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Project Name</th>
-        <th>Project Description</th>
-        <th>Client Name</th>
-        <th>Project Manager</th>
-        <th>Tasks</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let project of projects">
-        <td>{{ project.id }}</td>
-        <td>{{ project.name }}</td>
-        <td>{{ project.description }}</td>
-        <td>{{ project.clientName }}</td>
-        <td>{{ project.projectManagerName }}</td>
-        <td><button class="task-button" (click)="viewtasks(project.id)">View Tasks</button></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+
+
+
+  

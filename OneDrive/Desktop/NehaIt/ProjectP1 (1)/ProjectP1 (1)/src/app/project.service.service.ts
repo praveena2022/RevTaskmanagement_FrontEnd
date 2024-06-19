@@ -81,6 +81,12 @@ export class ProjectServiceService {
     );
   }
 
+  getProjectsByPM(pmiD:string): Observable<ProjectP[]> {
+    return this.http.get<ProjectP[]>(`${this.apiURL}/PM/${pmiD}`).pipe(
+      tap(projects => console.log('Fetched projects:', projects))
+    );
+  }
+
   getProjectById(id: number): Observable<ProjectP> {
     
     return this.http.get<ProjectP>(`${this.apiURL}/${id}`);

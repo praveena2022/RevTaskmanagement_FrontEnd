@@ -23,7 +23,8 @@ export class PMProjectsComponent implements OnInit {
     ) {}
 
   ngOnInit(): void {
-    this.projects = this.projectService.getProjects();
+    const userId=this.pmAuthService.getUserId();
+    this.projects = this.projectService.getProjectsByPM(userId);
     //this.
     // const userId=this.pmAuthService.getUserId();
     // console.log("this is pm user iD"+userId);
